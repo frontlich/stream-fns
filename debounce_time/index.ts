@@ -4,12 +4,12 @@ export function debounceTime(dueTime: number) {
 
     let timer: number;
 
-    return <T>(data: T) => {
+    return (...args: any[]) => {
 
       clearTimeout(timer);
 
       timer = setTimeout(() => {
-        fn(data);
+        fn(...args);
       }, dueTime);
 
     }
