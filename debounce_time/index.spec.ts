@@ -1,6 +1,6 @@
 import { debounceTime } from './index';
 
-describe('debounce', function() {
+describe('debounceTime', function() {
   it('should be called after 100 ms', function() {
     const mockFn = jest.fn();
     const run = debounceTime(100)(mockFn); //debounce(mockFn, 100);

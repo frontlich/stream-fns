@@ -1,6 +1,6 @@
 export function switchMap<T, R, S>(convert: (data: T) => Promise<R>) {
 
-  return (fn: (v: R) => S) => {
+  return (next: (v: R) => S, error?: (err: any) => any) => {
 
     let current: T;
 
@@ -11,10 +11,10 @@ export function switchMap<T, R, S>(convert: (data: T) => Promise<R>) {
       convert(value).then((res) => {
 
         if (value === current) {
-          fn(res);
+          next(res);
         }
 
-      });
+      }).catch(error);
 
     }
   }
