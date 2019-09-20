@@ -7,4 +7,5 @@
 tslint.json
 tsconfig.json
 *.log
-**/*!d.ts
+**/*.ts
+!**/*d.ts

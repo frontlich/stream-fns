@@ -1,10 +1,9 @@
-export function debounceTime(dueTime: number) {
+export function debounceTime(dueTime: number): <T extends Function>(fn: T) => T {
 
-  return (fn: Function) => {
-
+  return (fn) => {
     let timer: number;
 
-    return (...args: any[]) => {
+    const debouncedFn = (...args: any[]) => {
 
       clearTimeout(timer);
 
@@ -13,5 +12,7 @@ export function debounceTime(dueTime: number) {
       }, dueTime);
 
     }
-  }
+
+    return debouncedFn as any;
+  };
 }

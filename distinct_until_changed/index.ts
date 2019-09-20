@@ -1,17 +1,23 @@
-export function distinctUntilChanged<T>(fn: (v?: T) => any) {
+export function distinctUntilChanged<T extends Function>(fn: T): T {
 
-  let preValue: any, isFirstTime: boolean = true;
+  let preValue: any[] = [], isFirstTime: boolean = true;
 
-  return (value?: T) => {
+  const distinctFn = (...args: any[]) => {
 
-    if (preValue !== value || isFirstTime) {
+    if (
+      preValue.length !== args.length
+      || isFirstTime
+      || args.some((v, i) => preValue[i] !== v)
+    ) {
 
       isFirstTime = false;
-      preValue = value;
+      preValue = args;
 
-      fn(value);
+      fn(...args);
 
     }
 
   }
+
+  return distinctFn as any;
 };
