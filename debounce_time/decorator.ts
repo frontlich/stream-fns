@@ -1,4 +1,4 @@
-import _debounceTime from '../debounce_time/index';
+import _debounceTime from './index';
 
 export default function debounceTime(dueTime: number): MethodDecorator {
 

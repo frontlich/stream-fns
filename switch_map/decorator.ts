@@ -1,4 +1,4 @@
-import _switchMap from '../switch_map/index';
+import _switchMap from './index';
 
 export default function switchMap<V>(convert: (...argus: any[]) => Promise<V>): MethodDecorator {
 

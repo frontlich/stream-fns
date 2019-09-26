@@ -1,4 +1,4 @@
-import _distinctUntilChanged from '../distinct_until_changed/index';
+import _distinctUntilChanged from './index';
 
 const distinctUntilChanged: MethodDecorator = (target, propertyKey, descriptor: TypedPropertyDescriptor<any>) => {
   
