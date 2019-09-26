@@ -1,4 +1,6 @@
-export function distinctUntilChanged<T extends Function>(fn: T): T {
+import { GenericOperator } from '../type';
+
+function distinctUntilChanged(fn: any) {
 
   let preValue: any[] = [], isFirstTime: boolean = true;
 
@@ -21,3 +23,5 @@ export function distinctUntilChanged<T extends Function>(fn: T): T {
 
   return distinctFn as any;
 };
+
+export default distinctUntilChanged as GenericOperator;

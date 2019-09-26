@@ -1,4 +1,6 @@
-export function debounceTime(dueTime: number): <T extends Function>(fn: T) => T {
+import { GenericOperator } from '../type';
+
+export default function debounceTime(dueTime: number): GenericOperator {
 
   return (fn) => {
     let timer: number;
