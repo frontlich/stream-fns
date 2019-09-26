@@ -1,4 +1,4 @@
-import { distinctUntilChanged } from './index';
+import distinctUntilChanged from './index';
 
 test('distinctUntilChanged', () => {
   const mockFn = jest.fn();

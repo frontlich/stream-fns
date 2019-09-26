@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prepublish": "tsc",
+    "prepublish": "tsc && npm run test && npm version patch",
     "test": "jest"
   },
   "jest": {

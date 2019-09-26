@@ -1,4 +1,4 @@
-import { debounceTime } from './index';
+import debounceTime from './index';
 
 describe('debounceTime', function() {
   it('should be called after 100 ms', function() {

@@ -1,4 +1,4 @@
-import { switchMap } from './index';
+import switchMap from './index';
 
 
 test('switchMap', function () {
