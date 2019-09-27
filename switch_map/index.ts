@@ -19,7 +19,7 @@ export default function switchMap<V>(convert: (...argus: any[]) => Promise<V>) {
 
     return (...args: any[]) => {
 
-      let currentTime = times++;
+      let currentTime = ++times;
 
       convert(...args).then((res) => {
 

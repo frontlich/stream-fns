@@ -1,9 +1,9 @@
 import switchMap from './index';
 
 
-test('switchMap', function () {
+test('switchMap', function (done) {
 
-  jest.useFakeTimers();
+  expect.assertions(1);
 
   const run = switchMap((v: number) => new Promise((resolve) => {
 
@@ -13,15 +13,12 @@ test('switchMap', function () {
 
   }))((v) => {
     expect(v).toBe('c');
+    done();
   });
 
   run(0);
   run(1);
-
-  jest.advanceTimersByTime(200);
   run(2);
-
-  jest.useRealTimers();
 
 });
 
